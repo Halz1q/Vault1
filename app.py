@@ -294,7 +294,9 @@ def get_all_keys():
     
     return result
 
+init_db()
+
 if __name__ == '__main__':
-    init_db()
-    print("Сервер запущен: http://localhost:5086")
-    app.run(host='0.0.0.0', port=5086)
+    port = int(os.environ.get('PORT', 5086))
+    print(f"Сервер запущен: http://localhost:{port}")
+    app.run(host='0.0.0.0', port=port)
